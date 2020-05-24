@@ -1,3 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <p id="notice"><%= notice %></p>
+
+    <div>
+      <h1>List of All the Dogs Missing</h1>
+    </div>
+
+    <span><%= link_to 'Add New Dog', new_dog_path %></span>
+
+    <div>
+       <% @dogs.each do |dog| %>
+         <% if dog.image? %>
+           <p><%= image_tag dog.image.small.url%></p>
+         <% end %>
+         <p>Dog ID: <%= dog.id %></p>
+         <p>Status: <%= dog.list.status %></p>
+         <p>Breed: <%= dog.breed %></p>
+         <p>Color: <%= dog.color %></p>
+         <p>Size: <%= dog.size %></p>
+         <p>Location: <%= dog.location %></p>
+         <p>Date: <%= dog.date.strftime("%m/%d/%Y") %></p>
+         <p>Description: <%= dog.description %></p>
+         <p> Contact Information </p>
+         <p>First_name: <%= dog.first_name %></p>
+         <p>Last_name: <%= dog.last_name %></p>
+         <p>Phone Number: <%= dog.phone %></p>
+         <p>Email: <%= dog.email %></p>
+
+         <span><%= link_to 'Show', dog %></span>
+         <span><%= link_to 'Edit', edit_dog_path(dog) %></span>
+         <span><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+       <% end %>
+     </div>
+
+     <span><%= link_to 'Add New Dog', new_dog_path %></span>
+
+   </body>
+</html>
+
+
+
+
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Dogs</h1>

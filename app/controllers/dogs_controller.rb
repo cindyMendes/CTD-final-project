@@ -1,5 +1,6 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
   # GET /dogs
   # GET /dogs.json
@@ -69,6 +70,13 @@ class DogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dog_params
-      params.require(:dog).permit(:image, :breed, :color, :size, :location, :date, :description, :list_id, :first_name, :last_name, :phone, :email)
+      params.require(:dog).permit(:image, :breed, :color, :size, :location, :date, :description, :list_id, :first_name, :last_name, :phone, :email, :remove_image)
     end
+
+    def catch_not_found(e)
+      Rails.logger.debug("We had a not found exception.")
+      flash.alert = e.to_s
+      redirect_to dogs_path
+    end
+
 end
