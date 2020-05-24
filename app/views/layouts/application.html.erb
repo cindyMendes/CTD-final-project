@@ -4,12 +4,44 @@
     <title>Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="header">
+      <nav class="topnav" id="myTopnav">
+        <%= link_to(image_tag("home.svg"), root_path) %>
+        <%= link_to "Dog Lists", lists_path%>
+        <%= link_to "New Entry", welcome_new_path%>
+        <a id="contact" href="mailto:cindy.mendes@hotmail.fr">Report a Bug</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
+      <%= link_to(image_tag("findingfido.svg"), root_path) %>
+    </div>
+
     <%= yield %>
+
+    <footer>
+      <p> &copy; Copyright Finding Fido 2020 </p>
+      <div id="secondaryNav">
+        <%= link_to "Dogs", dogs_path%>
+      </div>
+    </footer>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
   </body>
 </html>
