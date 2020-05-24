@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+
+    <main class="list">
+      <div class="top">
+        <h1>Dog Lists</h1>
+        <p>Lost your dog? Check out our Found Dogs list to see if anyone has found them before creating a new entry.<br/><br/>
+        Found a dog? Check out our Lost Dogs list to see if anyone has reported that dog before creating a new entry.</p>
+      </div>
+
+      <div class="bottom">
+
+        <% @lists.each do |list| %>
+          <p class="button"><span class="link"><%= link_to 'See', list %></span> <span class="status"><%= list.status %> List </span></p>
+        <% end %>
+      </div>
+    </main>
+
+      <!-- <#%= link_to 'New List', new_list_path %>  -->
+
+     </body>
+</html>

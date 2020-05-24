@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <div class="show">
+      <p class="button"><%= link_to 'Back to List', lists_path %></p>
+      <h1><%= @list.status %> Dogs</h1>
+
+    <!--  <p> Status: <#%= @list.status %></p> -->
+
+
+      <% @list.dog.each do |list| %>
+        <div class="card">
+
+          <% if list.image? %>
+            <%= image_tag list.image.small.url %>
+          <% end %>
+
+          <!-- <p> Dog ID: <#%= list.id %></p> -->
+          <p><span> Breed: </span> <%= list.breed %></p>
+          <p><span> Color: </span> <%= list.color %></p>
+          <p><span> Size: </span> <%= list.size %></p>
+          <p><span> Location: </span> <%= list.location %></p>
+          <p><span> Date Added: </span> <%= list.date.strftime("%m/%d/%Y") %></p>
+          <!-- <p> Description: <#%= list.description %></p> -->
+
+          <p class="button"><%= link_to 'Learn More', list %></p>
+          <!-- <#%= link_to 'Edit Dog', edit_dog_path(list) %> | -->
+          <!-- <#%= link_to 'Destroy Dog', list, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+
+        </div>
+      <% end %>
+
+
+      <!-- <span><#%= link_to 'Edit', edit_list_path(@list) %></span> | -->
+
+      <!-- <span><#%= link_to 'Destroy', @list, method: :delete, data: { confirm: 'Are you sure?' } %></span> -->
+      <p class="button" id="bottombutton"><%= link_to 'Back to List', lists_path %></p>
+    </div>
+  </body>
+
+</html>
