@@ -62,42 +62,27 @@
   </div>
 
   <div>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :full_name, include_blank: true %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
   </div>
 
   <div>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
   </div>
 
   <div>
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
 
   <div>
     <%= f.submit %>
   </div>
-
-<% end %>
-
-
-
-
-
-
-
-
 
 <% end %>
