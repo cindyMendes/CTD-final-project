@@ -6,8 +6,13 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get dogslists" do
-    get welcome_dogslists_url
+  test "should get dogs" do
+    get welcome_dogs_url
+    assert_response :success
+  end
+
+  test "should get lists" do
+    get welcome_lists_url
     assert_response :success
   end
 

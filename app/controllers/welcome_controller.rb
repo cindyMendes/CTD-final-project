@@ -2,7 +2,10 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  def dogslists
+  def dogs
+  end
+
+  def lists
   end
 
   def new
