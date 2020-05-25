@@ -1,3 +1,225 @@
 // Place all the styles related to the Lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CSS Variables */
+
+$nav: #426F87;
+$button: #38A6C1;
+$light: #F8F6F2;
+$hover: #DD6E43;
+$dark: #2D302F;
+
+/* lists page */
+
+.list {
+  background-image: url("listsbackground.jpg");
+  padding-top: 200px;
+}
+
+.top h1, .show h1{
+  color: $dark;
+  text-shadow: none;
+}
+
+.top p {
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.bottom{
+  width: 300px;
+  margin: auto;
+}
+
+.bottom .button {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.button .link a{
+  display: inline-block;
+  padding: 10px 120px 10px 40px;
+  margin: -10px -120px -10px -40px;
+  z-index: 2;
+}
+
+.button .status{
+  z-index: 1;
+  float: right;
+  margin-left: -5%;
+  margin-right: 10%;
+}
+
+@media screen and (min-width: 600px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+  .top p {
+    padding-top: 30px;
+  }
+
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    align-content: center;
+    width: 80%;
+  }
+
+  .list h1 {
+    color: $light;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .list {
+    font-size: 1em;
+  }
+
+  .list h1, .show h1 {
+    font-size: 3.6em;
+  }
+
+  .top p, .bottom {
+    width: 70%;
+    max-width: 600px;
+  }
+}
+
+/* SHOW PAGES */
+
+.show {
+  background-image: url();
+  background-color: white;
+  width: 100%;
+  padding: 100px 20px 0 20px;
+  color: $dark;
+  overflow: auto;
+}
+
+.show h1 {
+  padding: 35px 0 50px 0;
+}
+
+.card {
+  background-color: $light;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 310px;
+  margin: 0 auto 50px auto;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  padding: 5px 0;
+}
+
+.card .button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0 auto 0;
+  box-shadow: none;
+}
+
+.card span {
+  font-weight: 800;
+}
+
+.show>.button {
+  position: absolute;
+  right: 20px;
+  margin-top: -40px;
+  background-color: rgba(0,0,0,0);
+  box-shadow: none;
+  color: $button;
+}
+
+.show>.button a{
+  color: $button;
+}
+
+.show>.button:hover {
+  background-color: rgba(0,0,0,0);
+}
+
+.show>.button a:hover{
+  color: $hover;
+}
+
+.show>#bottombutton {
+  float:right;
+  position: relative;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 700px) {
+  .show {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: stretch;
+  }
+
+  .show h1 {
+    grid-column: 1/3;
+  }
+
+  #bottombutton {
+    justify-self: end;
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .show {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .show h1, #bottombutton {
+    grid-column: 1/4;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .show {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .show h1, #bottombutton {
+    grid-column: 1/5;
+  }
+}
+
+@media screen and (min-width: 1690px) {
+  .show {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .show h1, #bottombutton {
+    grid-column: 1/6;
+  }
+}
+
+@media screen and (min-width: 2020px) {
+  .show {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .show h1, #bottombutton {
+    grid-column: 1/7;
+  }
+}

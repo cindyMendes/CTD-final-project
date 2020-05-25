@@ -1,2 +1,13 @@
-<h1>Welcome#new</h1>
-<p>Find me in app/views/welcome/new.html.erb</p>
+
+<main class="newdog">
+  <div class="filter">
+    <div class="top">
+      <h1>Dog Lists</h1>
+      <p>Lost your dog? Found a dog? Post a new entry here to get them home faster!</p>
+    </div>
+
+    <div class="bottom">
+      <p class="button"><%= link_to 'Add New Dog', new_dog_path %></p>
+    </div>
+  </div>
+</main>

@@ -1,2 +1,10 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<main>
+  <div class="left">
+    <h1>Finding Fido</h1>
+    <p>Your neighborhood lost dog finder app!</p>
+  </div>
+  <div class="right">
+    <p class="button"> <%= link_to "Dog Lists", lists_path%> </p>
+    <p class="button"> <%= link_to "Add a New Dog", welcome_new_path%> </p>
+  </div>
+</main>

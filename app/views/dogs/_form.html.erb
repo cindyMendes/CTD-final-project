@@ -11,78 +11,82 @@
     </div>
   <% end %>
 
+  <h2>Dog Information</h2>
+
+  <div>
+    <span><%= f.label :list_id, 'Status' %>:</span>
+    <%= f.collection_select :list_id, List.all, :id, :status, include_blank: true %>
+  </div>
+
   <div >
-    <%= f.label :image %>:
+    <span><%= f.label :image %>:</span>
     <%= f.file_field :image %>
   </div>
 
-  <div >
-    <% if f.object.image? %>
-      <%= image_tag f.object.image.small.url %>
-      <%= f.label :remove_image %>:
-      <%= f.check_box :remove_image %>
-    <% end %>
-  </div>
+  <!-- <div class="multiples">
+    <#% if f.object.image? %>
+      <#%= image_tag f.object.image.small.url %>
+      <#%= f.label :remove_image %>:
+      <#%= f.check_box :remove_image %>
+    <#% end %>
+  </div> -->
 
   <div>
-      <%= f.label :list_id %>:
-      <%= f.collection_radio_buttons :list_id, List.all, :id, :status %>
-  </div>
-
-  <div>
-    <%= f.label :breed %>:
+    <span><%= f.label :breed %>:</span>
     <%= f.text_field :breed %>
   </div>
 
   <div>
-    <%= f.label :color %>:
+    <span><%= f.label :color %>:</span>
     <%= f.text_field :color %>
   </div>
 
-  <div>
-      <%= f.label :size %>:
-      <%= f.radio_button :size, 'Small' %> Small
-      <%= f.radio_button :size, 'Medium' %> Medium
-      <%= f.radio_button :size, 'Large' %> Large
+  <div class="size">
+      <span><%= f.label :size %>:</span>
+      <span><%= f.radio_button :size, 'Small' %> Small</span>
+      <span><%= f.radio_button :size, 'Medium' %> Medium</span>
+      <span><%= f.radio_button :size, 'Large' %> Large</span>
   </div>
 
   <div>
-      <%= f.label :location %>:
+      <span><%= f.label :location %>:</span>
       <%= f.select(:location, options_for_select([["North Durham", "North Durham"], ["Downtown Durham", "Downtown Durham"], ["South Durham", "South Durham"], ["East Durham", "East Durham"], ["West Durham", "West Durham"]]), include_blank: true) %>
   </div>
 
-  <div>
-    <%= f.label :date %>:
+  <div class="date">
+    <span><%= f.label :date %>:</span>
     <%= f.date_select :date %>
   </div>
 
   <div>
-    <%= f.label :description %>:
+    <span><%= f.label :description %>:</span>
     <%= f.text_area :description %>
   </div>
 
+  <h2>Contact Information</h2>
+
   <div>
-    <%= f.label :first_name %>
+    <span><%= f.label :first_name %>:</span>
     <%= f.text_field :first_name %>
   </div>
 
   <div>
-    <%= f.label :last_name %>
+    <span><%= f.label :last_name %>:</span>
     <%= f.text_field :last_name %>
   </div>
 
   <div>
-    <%= f.label :phone %>
+    <span><%= f.label :phone %>:</span>
     <%= f.text_field :phone %>
   </div>
 
   <div>
-    <%= f.label :email %>
+    <span><%= f.label :email %>:</span>
     <%= f.text_field :email %>
   </div>
 
   <div>
-    <%= f.submit %>
+    <%= f.submit 'Submit Entry' %>
   </div>
 
 <% end %>

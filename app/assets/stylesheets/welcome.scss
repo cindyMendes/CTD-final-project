@@ -1,3 +1,101 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CSS Variables */
+
+$nav: #426F87;
+$button: #38A6C1;
+$light: #F8F6F2;
+$hover: #DD6E43;
+$dark: #2D302F;
+
+/* styling */
+
+main {
+  background-image: url(homebackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 86.5vh;
+  width: 100%;
+  padding: 150px 20px 100px 20px;
+  display: grid;
+  align-items: stretch;
+  align-content: center;
+  grid-row-gap: 50px;
+}
+
+h1 {
+  text-align: center;
+  color: $light;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  font-size: 2.8em;
+}
+
+.left p {
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  width: 270px;
+  margin: auto;
+}
+
+main p {
+  color: $light;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.right{
+  width: 270px;
+  margin: auto;
+}
+
+.button {
+  background-color: $button;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background-color: $hover;
+}
+
+p a {
+  color: $light;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    align-content: center;
+    grid-row-gap: 50px;
+  }
+
+  .right p{
+    float: right;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    font-size: 1.3em;
+  }
+
+  .left p, .right {
+    width: 340px;
+  }
+
+  .right p{
+    float: right;
+  }
+
+  .left p {
+    margin-top: 10px;
+  }
+}

@@ -5,9 +5,9 @@
     <p id="notice"><%= notice %></p>
 
     <div>
-      <% if @dog.image? %>
-        <p><%= image_tag @dog.image.small.url %></p>
-      <% end %>
+      <!-- <#% if @dog.image? %> -->
+      <p><%= image_tag @dog.image.small.url %></p>
+      <!-- <#% end %> -->
       <p><span>Dog ID:</span> <%= @dog.id %></p>
       <p><span>Status:</span> <%= @dog.list.status %></p>
       <p><span>Breed:</span> <%= @dog.breed %></p>
