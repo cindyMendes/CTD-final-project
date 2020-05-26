@@ -2,41 +2,46 @@
 <html>
 
   <body>
-    <p id="notice"><%= notice %></p>
+    <div class="show">
+      <p id="notice"><%= notice %></p>
 
-    <div>
-      <h1>List of All the Dogs Missing</h1>
-    </div>
+      <h1>All Dogs</h1>
 
-    <span><%= link_to 'Add New Dog', new_dog_path %></span>
+      <!-- <span><#%= link_to 'Add New Dog', new_dog_path %></span> -->
 
-    <div>
-       <% @dogs.each do |dog| %>
+         <% @dogs.each do |dog| %>
+         <div class="card">
+
          <% if dog.image? %>
-           <p><%= image_tag dog.image.small.url%></p>
+           <%= image_tag dog.image.small.url %>
          <% end %>
-         <p>Dog ID: <%= dog.id %></p>
-         <p>Status: <%= dog.list.status %></p>
-         <p>Breed: <%= dog.breed %></p>
-         <p>Color: <%= dog.color %></p>
-         <p>Size: <%= dog.size %></p>
-         <p>Location: <%= dog.location %></p>
-         <p>Date: <%= dog.date.strftime("%m/%d/%Y") %></p>
-         <p>Description: <%= dog.description %></p>
+
+         <!-- <p> Dog ID: <#%= list.id %></p> -->
+         <p><span> Status: </span><%= dog.list.status %></p>
+         <p><span> Breed: </span> <%= dog.breed %></p>
+         <p><span> Color: </span> <%= dog.color %></p>
+         <p><span> Size: </span> <%= dog.size %></p>
+         <p><span> Location: </span> <%= dog.location %></p>
+         <p><span> Date Added: </span> <%= dog.date.strftime("%m/%d/%Y") %></p>
+         <!-- <p> Description: <#%= list.description %></p> -->
+
+         <p class="button"><%= link_to 'Learn More', dog %></p>
+
+
+         <!-- <p>Description: <#%= dog.description %></p>
          <p> Contact Information </p>
-         <p>First Name: <%= dog.first_name %></p>
-         <p>Last Name: <%= dog.last_name %></p>
-         <p>Phone Number: <%= dog.phone %></p>
-         <p>Email: <%= dog.email %></p>
+         <p>First Name: <#%= dog.first_name %></p>
+         <p>Last Name: <#%= dog.last_name %></p>
+         <p>Phone Number: <#%= dog.phone %></p>
+         <p>Email: <#%= dog.email %></p> -->
 
-         <span><%= link_to 'Show', dog %></span>
-         <span><%= link_to 'Edit', edit_dog_path(dog) %></span>
-         <span><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-
+         <!-- <span><#%= link_to 'Show', dog %></span>
+         <span><#%= link_to 'Edit', edit_dog_path(dog) %></span>
+         <span><#%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %></span> -->
+       </div>
        <% end %>
+
+       <!-- <span><#%= link_to 'Add New Dog', new_dog_path %></span> -->
      </div>
-
-     <span><%= link_to 'Add New Dog', new_dog_path %></span>
-
    </body>
 </html>

@@ -2,11 +2,14 @@
 <html>
 
   <body>
-    <h1>Editing Dog</h1>
+    <div class="dogcreation">
+      <p class="button"><%= link_to 'Back', dogs_path %></p>
+      <h1>Edit Dog</h1>
 
-    <%= render "form", dog: @dog %>
+      <%= render "form", dog: @dog %>
 
-    <span><%= link_to 'Back', dogs_path %></span>
+      <p class="button" id="bottombutton"><%= link_to 'Back', dogs_path %></p>
+    </div>
 
   </body>
 

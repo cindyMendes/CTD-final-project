@@ -23,13 +23,13 @@
     <%= f.file_field :image %>
   </div>
 
-  <!-- <div class="multiples">
-    <#% if f.object.image? %>
-      <#%= image_tag f.object.image.small.url %>
-      <#%= f.label :remove_image %>:
-      <#%= f.check_box :remove_image %>
-    <#% end %>
-  </div> -->
+  <div class="single">
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.small.url %>
+      <!-- <#%= f.label :remove_image %>:
+      <#%= f.check_box :remove_image %> -->
+    <% end %>
+  </div>
 
   <div>
     <span><%= f.label :breed %>:</span>

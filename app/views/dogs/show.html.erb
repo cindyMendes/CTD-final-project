@@ -2,33 +2,45 @@
 <html>
 
   <body>
-    <p id="notice"><%= notice %></p>
+    <div class="wrapper">
+    <!-- <p id="notice"><#%= notice %></p> -->
+      <p class="button"><%= link_to 'Back to List', lists_path %></p>
+      <div class="dogtemplate">
+        <div class="hero">
+          <!-- <#% if @dog.image? %> -->
+          <%= image_tag @dog.image.small.url %>
+          <!-- <#% end %> -->
+        </div>
+        <div class="info">
+          <h2>Dog Information</h2>
 
-    <div>
-      <!-- <#% if @dog.image? %> -->
-      <p><%= image_tag @dog.image.small.url %></p>
-      <!-- <#% end %> -->
-      <p><span>Dog ID:</span> <%= @dog.id %></p>
-      <p><span>Status:</span> <%= @dog.list.status %></p>
-      <p><span>Breed:</span> <%= @dog.breed %></p>
-      <p><span>Color:</span> <%= @dog.color %></p>
-      <p><span>Size:</span> <%= @dog.size %></p>
-      <p><span>Location:</span> <%= @dog.location %></p>
-      <p><span>Date:</span> <%= @dog.date.strftime("%m/%d/%Y") %></p>
-      <p><span>Description:</span> <%= @dog.description %></p>
-      <p><span>First Name:</span> <%= @dog.first_name %></p>
-      <p><span>Last Name:</span> <%= @dog.last_name %></p>
-      <p><span>Phone Number:</span> <%= @dog.phone %></p>
-      <p><span>Email:</span> <%= @dog.email %></p>
+          <p class="item"><span>Dog ID:</span> <%= @dog.id %></p>
+          <p class="item"><span>Status:</span> <%= @dog.list.status %></p>
+          <p class="item"><span>Breed:</span> <%= @dog.breed %></p>
+          <p class="item"><span>Color:</span> <%= @dog.color %></p>
+          <p class="item"><span>Size:</span> <%= @dog.size %></p>
+          <p class="item"><span>Location:</span> <%= @dog.location %></p>
+          <p class="item"><span>Date:</span> <%= @dog.date.strftime("%m/%d/%Y") %></p>
+          <p class="item"><span>Description:</span> <%= @dog.description %></p>
+
+          <h2>Contact Information</h2>
+
+          <p class="item"><span>First Name:</span> <%= @dog.first_name %></p>
+          <p class="item"><span>Last Name:</span> <%= @dog.last_name %></p>
+          <p class="item"><span>Phone Number:</span> <%= @dog.phone %></p>
+          <p class="item"><span>Email:</span> <%= @dog.email %></p>
+
+          <div class="littlenav">
+            <p class="button"><%= link_to 'Edit', edit_dog_path(@dog) %></p>
+            <p class="button">|</p>
+            <p class="button"><%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          </div>
+        </div>
+      </div>
+
+      <p class="button" id="bottomback"><%= link_to 'Back to List', lists_path %></p>
     </div>
 
-
-    <div>
-    <span><%= link_to 'Edit', edit_dog_path(@dog) %></span>
-    <span><%= link_to 'Back', dogs_path %></span>
-    <span><%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-    <span><%= link_to 'Back To List', lists_path %></span>
-    </div>
   </body>
 
 </html>
