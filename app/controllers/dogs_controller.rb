@@ -57,7 +57,7 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     respond_to do |format|
-      format.html { redirect_to dogs_url, notice: 'Dog was successfully destroyed.' }
+      format.html { redirect_to dogs_url, notice: 'Dog was successfully deleted.' }
       format.json { head :no_content }
     end
   end
